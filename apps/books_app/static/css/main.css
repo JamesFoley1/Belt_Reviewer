@@ -1,0 +1,9 @@
+.stars {
+    background-color: rgba(208, 205, 205, 0.892);
+}
+
+.scroll-box {
+    overflow-y: scroll;
+    height: 75vh;
+    padding: 1rem;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Add Book and Review</title>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Welcome!</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/books">Home</a></li>
+                <li><a href="/">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col s12 m12 l12 register row card">
+                <div class="col sm11 m11 l11">
+                    <form action="/addbook" method="post">
+                        {% csrf_token %}
+                        <h4>Add a new Book Title and Review</h4>
+                        <p>Book title:</p>
+                        <input type="text" name="title">
+                        <br>
+                        <!-- <div class="row">
+                            <p class="col s3 m3 l3">Choose from the list</p>
+                            <select class="col s3 m3 l3 browser-default stars" name="stars">
+                                <option value="0" disabled selected>0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select><br>
+                        </div> -->
+                        <div class="row">
+                            <p class="col s3 m3 l3">Enter author here:</p>
+                            <input class="col s3 m3 l3" type="text"  name="author">
+                        </div>
+                        <div class="row">
+                            <p class="col s3 m3 l3">Review</p>
+                            <textarea type="textarea" class="col s6 m6 l6 materialize-textarea" name="review"></textarea>
+                        </div>
+                        <div class="col s3 m3 l3">
+                            <p>Rating: </p>
+                            <select class="browser-default stars" name="rating">
+                                <option value="0" selected>0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select><br>
+                            <button class="btn" type="submit" name"submit">Submit Review</button>
+                            <br><br><br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
