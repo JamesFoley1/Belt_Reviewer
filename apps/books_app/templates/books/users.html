@@ -42,7 +42,7 @@
                     <p>Posted Reviews On The Following Books:</p>
                     <ul>
                         {% for newbook in user_book %}                                
-                            <li><a href="/books/show/{{ book.id }}">{{ newbook.book.name }}</a></li>
+                            <li><a href="/books/show/{{ newbook.book_id }}">{{ newbook.book.name }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>

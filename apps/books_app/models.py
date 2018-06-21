@@ -46,12 +46,13 @@ class UserManager(models.Manager):
         errors = {}
         user = Users.objects.filter(email = postData['email2'])
         if len(user):
-            if bcrypt.checkpw(postData['password2'].encode(), user[0].password.encode()) == True:
+            if bcrypt.checkpw(postData['password2'].encode(), user[0].password.encode()):
                 return user
             else:
                 errors['invalid_email'] = "The email address or password you entered was not valid."
                 return errors
         else:
+            print(user[0].password)
             errors['empty'] = "Please enter a valid email address and password."
             return errors
     
